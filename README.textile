@@ -1,0 +1,3 @@
+h1. Snorkle
+
+Snorkle is a compilation of Ruby Audio libraries with examples. Noah Thorp created it to support his talk "Making Music With Ruby: Patterns, Context, Fun" at RubyConf 2009.
