@@ -12,20 +12,28 @@ task :tests do
   Rake::Task["cuc:all"].invoke  
 end
 
-namespace :spec do
-  desc "Print Specdoc for all specs"
-  Spec::Rake::SpecTask.new(:doc) do |t| 
-    t.spec_opts = ["--format", "specdoc", "--dry-run"]
-    t.spec_files = FileList['spec/**/*_spec.rb']
-  end 
+desc "Prints out a readable spec including rspec examples and cucumber feature steps"
+task :readable_spec do
+  echo_banner("RSpec Examples")
+  Rake::Task["spec:units_doc"].invoke  
+  echo_banner("Cucumber Features")
+  Rake::Task["cuc:all_pretty"].invoke  
+end
 
+namespace :spec do
   [:units].each do |sub|
     desc "Run the code examples in spec/#{sub}"
-    Spec::Rake::SpecTask.new(sub) do |t|
+    Spec::Rake::SpecTask.new("#{sub}") do |t|
       t.spec_opts = ['--options', "\"#{PROJECT_ROOT}/spec/spec.opts\""]
       file_list = FileList["spec/#{sub}/*_spec.rb"] 
       t.spec_files = file_list
     end
+   
+    desc "Print Specdoc for spec/#{sub}_doc"
+    Spec::Rake::SpecTask.new("#{sub}_doc") do |t| 
+      t.spec_opts = ["--format", "specdoc", "--dry-run"]
+      t.spec_files = FileList["spec/#{sub}/*_spec.rb"]
+    end 
   end
 end
 
@@ -34,7 +42,7 @@ namespace :cuc do
   task :all do
     system "cucumber --format progress" 
   end
-  
+  desc "run cucumber specs and show readable steps" 
   task :all_pretty do
     system "cucumber -f pretty"
   end
