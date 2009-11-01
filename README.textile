@@ -4,13 +4,15 @@ Snorkle is a compilation of Ruby Audio libraries with examples. Noah Thorp creat
 
 You can follow Noah's adventures on his "blog":http://www.aquabu.com and on "Twitter":http://www.twitter.com/aquabu.
 
-Projects Included:
+h2. Projects Included In Snorkle:
+
+* "bloopsaphone":http://github.com/whymirror/bloopsaphone - Why The Lucky Stiff
 
 h2. Installing Bloopsaphone on OSX
 
 sudo port install portaudio
 sudo gem install why-bloopsaphone
 
-Projects Worth Checking Out:
+h2. Projects Worth Checking Out That Are Not Included In Snorkle:
+
 * "core_audio":http://github.com/jvoorhis/core_audio - Jeremy Voorhis
-* "bloopsaphone":http://github.com/whymirror/bloopsaphone - Why The Lucky Stiff
