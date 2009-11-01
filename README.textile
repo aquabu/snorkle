@@ -8,7 +8,7 @@ h2. Projects Included In Snorkle:
 
 * "bloopsaphone":http://github.com/whymirror/bloopsaphone - Why The Lucky Stiff
 
-h2. Installing Bloopsaphone on OSX
+h3. Installing Bloopsaphone on OSX
 
 sudo port install portaudio
 sudo gem install why-bloopsaphone
