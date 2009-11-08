@@ -1,6 +1,9 @@
 # ignore log files
 /log/*
 /tmp/*
+# ignore local source used for examples
+
+/source_reference
 
 # ignore generated test docs
 feature_report.html
