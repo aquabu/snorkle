@@ -6,6 +6,14 @@ You can follow Noah's adventures on his "blog":http://www.aquabu.com and on "Twi
 
 h2. Libraries and Examples
 
+Examples are in the /examples folder.
+
+h3. Chuck
+
+h4. Usage Notes
+
+* you can call chuck from the command line non-realtime using the -s (--silent) flag.
+
 h3. Bloopsaphone
 
 Bloopsaphone is a great little Ruby library for playing Chip Tunes.
@@ -17,6 +25,17 @@ h4. *Installing Bloopsaphone on OSX*
 sudo port install portaudio
 sudo gem install why-bloopsaphone
 
+
+h2. Snorkle Primer
+
+These pdfs and web references are well worth reading in support of your ruby audio endeavors or interfacing with non-ruby libraries:
+* Chuck Manual
+* Super Collider PDF (Compiled by Noah from the supercollider help files)
+* Toplap live coding wiki
+* Open Sound Control specification
+
 h2. Projects Worth Checking Out That Are Not Included In Snorkle:
 
 * "core_audio":http://github.com/jvoorhis/core_audio - Jeremy Voorhis
+* "keykit":http://nosuch.com/keykit/ - Tim Thompson
+
