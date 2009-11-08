@@ -9,24 +9,29 @@ SinOsc s => JCRev r => dac;
 .5 => r.gain;
 .075 => r.mix;
 
-// note number
-20 => float note;
-
-
-// print each
 for( int i; i < me.args(); i++ )
 {
-    // get an argument from the chuck call and store as a note
-    Std.atoi( me.arg(i) ) => int note;
+
+    // make one
+    StringTokenizer tok;
+
+    // defaults
+    60 => float note;
+    1 => float duration;
+
+    // break apart argument string into note and duration
+    tok.set( me.arg(i) );
+    Std.atoi( tok.next() ) => note;
+    Std.atoi( tok.next() ) => duration;
 
     // convert arg to hz and play it
     Std.mtof( note ) => s.freq;
 
     // advance time
-    .5::second => now;
+    ( .5::second / duration ) => now;
 }
 
 // turn off s
 0 => s.gain;
-// wait a bit
-1::second => now;
+// wait a bit for reverb to die out
+2::second => now;
