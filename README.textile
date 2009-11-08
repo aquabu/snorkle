@@ -4,11 +4,15 @@ Snorkle is a compilation of Ruby Audio libraries with examples. Noah Thorp creat
 
 You can follow Noah's adventures on his "blog":http://www.aquabu.com and on "Twitter":http://www.twitter.com/aquabu.
 
-h2. Projects Included In Snorkle:
+h2. Libraries and Examples
 
-* "bloopsaphone":http://github.com/whymirror/bloopsaphone - Why The Lucky Stiff
+h3. Bloopsaphone
 
-h3. Installing Bloopsaphone on OSX
+Bloopsaphone is a great little Ruby library for playing Chip Tunes.
+
+h4. *Installing Bloopsaphone on OSX*
+
+"bloopsaphone":http://github.com/whymirror/bloopsaphone - Why The Lucky Stiff
 
 sudo port install portaudio
 sudo gem install why-bloopsaphone
