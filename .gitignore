@@ -1,8 +1,9 @@
 # ignore log files
 /log/*
 /tmp/*
-# ignore local source used for examples
 
+# ignore local source used for examples
+/examples/chuck/audio_render.wav
 /source_reference
 
 # ignore generated test docs
