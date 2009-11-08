@@ -1,1 +1,44 @@
+# ignore log files
+/log/*
+/tmp/*
+
+# ignore generated test docs
+feature_report.html
+
+# ignore developer-specific configuration files.
+/config/database.yml
+/config/proxy_to.yml
+/config/amazon_s3.yml
+/config/amazon_fps.yml
+/config/paypal.yml
+config/application_config.yml
+/tmp/**/*
+/public/store_photo
+/public/videos
+/spec/fixtures/tmp/test_images/images/**/*
+/tags/*
+/tags
+/coverage
+/coverage/*
+/coverage/**/*
+/coverage.data
+
+# ignore editor droppings
+\#*\#
+.#*
+*~
+*.swp
+Thumbs.db
+.idea/**/*
+.idea/*
+
+
+#ignore Mac OS X droppings
 .DS_Store
+
+# ignore sqlite dbs
+/db/*.sqlite
+
+# ignore generated files
+/public/stylesheets/style_core.css
+/public/stylesheets/style_jquery.css
