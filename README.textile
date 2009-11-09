@@ -1,8 +1,8 @@
 h1. Snorkle
 
-Snorkle is a compilation of Ruby Audio libraries with examples. Noah Thorp created it to support his talk "Making Music With Ruby: Patterns, Context, Fun" at RubyConf 2009.
+Snorkle is a compilation of Ruby Audio libraries with examples. It was created by Noah Thorp to go along with his talk "Making Music With Ruby: Patterns, Context, Fun" at RubyConf 2009 and to make it easier for rubyists to explore methods of working on music and audio projects.
 
-You can follow Noah's adventures on his "blog":http://www.aquabu.com and on "Twitter":http://www.twitter.com/aquabu.
+You can follow Noah's adventures on his "blog":http://www.aquabu.com and on "Twitter":http://www.twitter.com/aquabu. Also, if you are in the Bay Area you should checkout the "Bay Area Computer Music Technology Group":http://www.barcmut.org
 
 h2. Libraries and Examples
 
@@ -10,7 +10,7 @@ Examples are in the /examples folder.
 
 
 
-h3. Chuck Examples
+h3. Chuck
 
 h4. Non-Real Time Audio Rendering Using Chuck Example
 
@@ -22,7 +22,7 @@ Use examples/chuck/simple_render.ck to render non-realtime audio or realtime aud
 
 
 
-h3. Bloopsaphone Examples
+h3. Bloopsaphone
 
 Bloopsaphone is a great little Ruby library written by _Why The Lucky Stiff and friends for playing Chip Tunes.
 

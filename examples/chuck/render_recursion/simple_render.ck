@@ -4,22 +4,20 @@ dac => Gain g => WvOut w => blackhole;
 // this is the output file name
 "audio_render" => w.wavFilename;
 
-// play the whole tones demo
 SinOsc s => JCRev r => dac;
 .5 => r.gain;
 .075 => r.mix;
 
+// loop through the command line arguments
 for( int i; i < me.args(); i++ )
 {
-
-    // make one
-    StringTokenizer tok;
 
     // defaults
     60 => float note;
     1 => float duration;
 
-    // break apart argument string into note and duration
+    // break apart command line argument strings into note and duration
+    StringTokenizer tok;
     tok.set( me.arg(i) );
     Std.atoi( tok.next() ) => note;
     Std.atoi( tok.next() ) => duration;
@@ -33,5 +31,6 @@ for( int i; i < me.args(); i++ )
 
 // turn off s
 0 => s.gain;
-// wait a bit for reverb to die out
+
+// pause to let the verb die
 2::second => now;
