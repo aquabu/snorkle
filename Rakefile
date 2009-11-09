@@ -3,11 +3,14 @@ task :default => [:tests]
 
 require 'rake/testtask'
 require 'spec/rake/spectask'
+spec_folders = [:atlatl, :smoke_test]
 
 desc "Run all tests"
 task :tests do
   echo_banner("RSpec Examples")
-  Rake::Task["spec:units"].invoke  
+  spec_folders.each do |folder| 
+    Rake::Task["spec:#{folder}"].invoke  
+  end
   echo_banner("Cucumber Features")
   Rake::Task["cuc:all"].invoke  
 end
@@ -15,13 +18,15 @@ end
 desc "Prints out a readable spec including rspec examples and cucumber feature steps"
 task :readable_spec do
   echo_banner("RSpec Examples")
-  Rake::Task["spec:units_doc"].invoke  
+  spec_folders.each do |folder| 
+    Rake::Task["spec:#{folder}_doc"].invoke  
+  end 
   echo_banner("Cucumber Features")
   Rake::Task["cuc:all_pretty"].invoke  
 end
 
 namespace :spec do
-  [:units].each do |sub|
+  spec_folders.each do |sub|
     desc "Run the code examples in spec/#{sub}"
     Spec::Rake::SpecTask.new("#{sub}") do |t|
       t.spec_opts = ['--options', "\"#{PROJECT_ROOT}/spec/spec.opts\""]
