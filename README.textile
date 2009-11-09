@@ -20,7 +20,10 @@ Use lib/simple_render.ck to render non-realtime audio or realtime audio with com
 * Call this file directly using: chuck -s simple_render.ck:'filename.wav':'80 2':'65 2':'67 2'
 * Command line simple_render arguments are a series of strings seperated by ":". They consist of a MIDI note number followed by a duration in seconds. '60 2' would be a middle C lasting for 2 seconds.
 
+h3. Lilypond
 
+"download":http://lilypond.org/web/install/ or install as a port on mac with:
+sudo port install lilypond
 
 h3. Bloopsaphone
 
