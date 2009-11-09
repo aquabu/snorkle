@@ -1,5 +1,5 @@
 # at some point in nearly everyone doing generative music decides to try out pi as music
-# this usually is not really all that musically satisfying. Here it is to save you the trouble :-)
+# this usually not really all that musically satisfying. Here it is to save you the trouble :-)
 
 require File.expand_path(File.dirname(__FILE__)) + '/../../config/init.rb'
 
