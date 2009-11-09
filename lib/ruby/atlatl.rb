@@ -31,6 +31,10 @@ class Atlatl
     string += " -s" unless realtime
     string
   end
+
+  def render
+    system chuck_string
+  end
   
   class Note
     attr_accessor :pitch, :duration
