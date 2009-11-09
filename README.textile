@@ -14,7 +14,7 @@ h3. Chuck
 
 h4. Non-Real Time Audio Rendering Using Chuck Example
 
-Use examples/chuck/simple_render.ck to render non-realtime audio or realtime audio with command line arguments to Chuck.
+Use lib/simple_render.ck to render non-realtime audio or realtime audio with command line arguments to Chuck.
 
 * You can call chuck from the command line non-realtime using the -s (silent) flag.
 * Call this file directly using: chuck -s simple_render.ck:'80 2':'65 2':'67 2'

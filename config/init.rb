@@ -6,6 +6,6 @@ require 'bloops'
 
 
 PROJECT_ROOT = File.expand_path(File.dirname(__FILE__)) + "/../"
-LIB_ROOT = PROJECT_ROOT + "/lib"
-# require all the files in the lib directory
-Dir.foreach(LIB_ROOT) {|f| require LIB_ROOT + "/" + f unless [".",".."].include?(f)}
+LIB_RUBY_ROOT = PROJECT_ROOT + "/lib/ruby"
+# require all the files in the lib ruby directory
+Dir.foreach(LIB_RUBY_ROOT) {|f| require LIB_RUBY_ROOT + "/" + f unless [".",".."].include?(f)}
