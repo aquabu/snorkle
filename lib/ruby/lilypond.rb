@@ -1,25 +1,24 @@
 class Lilypond
-  attr_accessor :temp_file, :note_string, :ouput_file
+  attr_accessor :temp_file, :note_string, :output_file, :header
   
   def initialize(opts = {})
     @temp_file = "temp.ly"
-    @output_file = "/temp.pdf"
+    @output_file = "temp.pdf"
     @note_string = opts[:note_string] || ""
+    @header = opts[:header] || ""
   end
 
   def lilypond_doc
 <<DOC
-\\include "temp.ly"
-
 \\header {
-title = "A scale in LilyPond"
+  title = "#{header}"
 }
 
 \\relative {
-  #{@note_string}
+  #{note_string}
 }
 
-\\version "2.12.2"  % necessary for upgrading to future LilyPond versions.
+\\version "2.12.2"
 DOC
   end
 
