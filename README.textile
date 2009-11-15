@@ -8,14 +8,17 @@ h2. Libraries and Examples
 
 Examples are in the /examples folder.
 
-Snorkle makes use of lots of libraries from various sources. Some of the libraries are
-referenced as gems (e.g. Bloopsaphone), some require explicit installation (e.g. Lilypad, Chuck) , and some are installed as
-git submodules (e.g. Opaz-plugdk, Chuckr). For now just follow the install instructions - it's on the priorities
-list to simplify the install.
+Snorkle makes use of lots of libraries from various sources. Some of the libraries are referenced as gems (e.g. Bloopsaphone), some require explicit installation (e.g. Lilypad, Chuck) , and some are installed as git submodules (e.g. Opaz-plugdk, Chuckr). For now just follow the install instructions - it's on the priorities list to simplify the install.
 
+Install snorkle by doing the following:
+$ git clone git@github.com:aquabu/snorkle.git
+$ cd snorkle
+$ git submodule init
+$ git submodule update # this might break stuff
 
 
 h3. Chuck
+
 
 h4. Non-Real Time Audio Rendering Using Chuck Example
 
@@ -26,18 +29,18 @@ Use lib/simple_render.ck to render non-realtime audio or realtime audio with com
 * Command line simple_render arguments are a series of strings seperated by ":". They consist of a MIDI note number followed by a duration in seconds. '60 2' would be a middle C lasting for 2 seconds.
 
 h3. Opaz-plugdk
+
 You can use the opaz-plugdk ruby api to compile Java VST plugins that can be run by the jVSTwRapper
 
 This is a little complicated.
 
 - Install the Java jVSTwRapper: http://jvstwrapper.sourceforge.net/
-- opaz plugdk is installed as a git submodule in Snorkle. You can clone it directly "here":http://github.com/thbar/opaz-plugdk
+- Opaz plugdk is installed as a git submodule in Snorkle. You can clone it directly "here":http://github.com/thbar/opaz-plugdk
 
 h3. Lilypond
 
 "download":http://lilypond.org/web/install/ or install as a port on mac with:
 sudo port install lilypond
-
 
 h3. Bloopsaphone
 
@@ -51,8 +54,7 @@ sudo port install portaudio
 sudo gem install why-bloopsaphone
 
 
-
-h2. Snorkle Primer
+h1. Snorkle Primer
 
 These pdfs and web references are well worth reading in support of your ruby audio endeavors or interfacing with non-ruby libraries:
 * Chuck Manual
@@ -60,7 +62,7 @@ These pdfs and web references are well worth reading in support of your ruby aud
 * Toplap live coding wiki
 * Open Sound Control specification
 
-h2. Projects Worth Checking Out That Are Not Included In Snorkle:
+h1. Projects Worth Checking Out That Are Not Included In Snorkle:
 
 * "core_audio":http://github.com/jvoorhis/core_audio - Jeremy Voorhis
 * "keykit":http://nosuch.com/keykit/ - Tim Thompson
