@@ -4,7 +4,7 @@ Snorkle is a compilation of Ruby Audio libraries with examples. It was created b
 
 You can follow Noah's adventures on his "blog":http://www.aquabu.com and on "Twitter":http://www.twitter.com/aquabu. Also, if you are in the Bay Area you should checkout the "Bay Area Computer Music Technology Group":http://www.barcmut.org
 
-h2. Libraries and Examples
+h1. Libraries and Examples
 
 Examples are in the /examples folder.
 
@@ -14,13 +14,12 @@ Install snorkle by doing the following:
 $ git clone git@github.com:aquabu/snorkle.git
 $ cd snorkle
 $ git submodule init
-$ git submodule update # this might break stuff
 
 
-h3. Chuck
+h2. Chuck
 
 
-h4. Non-Real Time Audio Rendering Using Chuck Example
+h3. Non-Real Time Audio Rendering Using Chuck Example
 
 Use lib/simple_render.ck to render non-realtime audio or realtime audio with command line arguments to Chuck.
 
@@ -28,25 +27,16 @@ Use lib/simple_render.ck to render non-realtime audio or realtime audio with com
 * Call this file directly using: chuck -s simple_render.ck:'filename.wav':'80 2':'65 2':'67 2'
 * Command line simple_render arguments are a series of strings seperated by ":". They consist of a MIDI note number followed by a duration in seconds. '60 2' would be a middle C lasting for 2 seconds.
 
-h3. Opaz-plugdk
-
-You can use the opaz-plugdk ruby api to compile Java VST plugins that can be run by the jVSTwRapper
-
-This is a little complicated.
-
-- Install the Java jVSTwRapper: http://jvstwrapper.sourceforge.net/
-- Opaz plugdk is installed as a git submodule in Snorkle. You can clone it directly "here":http://github.com/thbar/opaz-plugdk
-
-h3. Lilypond
+h2. Lilypond
 
 "download":http://lilypond.org/web/install/ or install as a port on mac with:
 sudo port install lilypond
 
-h3. Bloopsaphone
+h2. Bloopsaphone
 
 Bloopsaphone is a great little Ruby library written by _Why The Lucky Stiff and friends for playing Chip Tunes.
 
-h4. *Installing Bloopsaphone on OSX*
+h3. *Installing Bloopsaphone on OSX*
 
 "bloopsaphone":http://github.com/whymirror/bloopsaphone - Why The Lucky Stiff
 
@@ -62,8 +52,7 @@ These pdfs and web references are well worth reading in support of your ruby aud
 * Toplap live coding wiki
 * Open Sound Control specification
 
-h1. Projects Worth Checking Out That Are Not Included In Snorkle:
-
+h1. Some Projects Worth Checking Out That Are Not Included In Snorkle
+* "opaz-plugdk":http://github.com/thbar/opaz-plugdk library for bulding jVSTwRapper plugins with Ruby - Thibaut Barrère
 * "core_audio":http://github.com/jvoorhis/core_audio - Jeremy Voorhis
 * "keykit":http://nosuch.com/keykit/ - Tim Thompson
-
