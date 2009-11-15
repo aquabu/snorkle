@@ -1,0 +1,3 @@
+[submodule "lib/submodules/opaz-plugdk"]
+	path = lib/submodules/opaz-plugdk
+	url = git://github.com/thbar/opaz-plugdk.git
