@@ -13,5 +13,5 @@ LILYPOND_PATH = "/Applications/LilyPond.app/Contents/Resources/bin/lilypond" # t
 # require all the files in the lib ruby directory
 Dir.foreach(LIB_RUBY_ROOT) {|f| require LIB_RUBY_ROOT + "/" + f unless [".",".."].include?(f)}
 
-
-
+# load chuckr
+require PROJECT_ROOT + "/lib/submodules/chuckr/lib/chuckr.rb"

@@ -7,3 +7,9 @@
 [submodule "lib/submodules/scruby"]
 	path = lib/submodules/scruby
 	url = git://github.com/maca/scruby.git
+[submodule "chuckr"]
+	path = chuckr
+	url = git://github.com/lian/chuckr.git
+[submodule "lib/submodules/chuckr"]
+	path = lib/submodules/chuckr
+	url = git://github.com/lian/chuckr.git

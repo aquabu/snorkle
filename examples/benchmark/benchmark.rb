@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-require File.expand_path(File.dirname(__FILE__)) + '/../init.rb'
+
+require File.expand_path(File.dirname(__FILE__)) + '/../../config/init.rb'
 samples   = []
 scheduler = Gamelan::Scheduler.new(:tempo => 60)
 times = 1000
