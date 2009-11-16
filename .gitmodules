@@ -1,3 +1,6 @@
 [submodule "lib/submodules/opaz-plugdk"]
 	path = lib/submodules/opaz-plugdk
 	url = git://github.com/thbar/opaz-plugdk.git
+[submodule "lib/submodules/irbivore"]
+	path = lib/submodules/irbivore
+	url = git@github.com:aquabu/irbivore.git
