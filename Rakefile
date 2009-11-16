@@ -3,7 +3,7 @@ task :default => [:tests]
 
 require 'rake/testtask'
 require 'spec/rake/spectask'
-spec_folders = [:atlatl, :smoke_test]
+spec_folders = [:units, :smoke_test]
 
 desc "Run all tests"
 task :tests do
