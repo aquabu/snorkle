@@ -57,10 +57,10 @@ sudo gem install why-bloopsaphone
 h1. Snorkle Primer
 
 These pdfs and web references are well worth reading in support of your ruby audio endeavors or interfacing with non-ruby libraries:
-* Chuck Manual
+* "Chuck Manual":http://chuck.cs.princeton.edu/release/files/chuck_manual.pdf
 * Super Collider PDF (Compiled by Noah from the supercollider help files)
-* Toplap live coding wiki
-* Open Sound Control specification
+* "Toplap live coding wiki":http://www.toplap.org/index.php/Main_Page
+* "Open Sound Control specification":http://opensoundcontrol.org/spec-1_0
 
 h1. Some Projects Worth Checking Out That Are Not Included In Snorkle
 * "opaz-plugdk":http://github.com/thbar/opaz-plugdk library for bulding jVSTwRapper plugins with Ruby - Thibaut Barrère
