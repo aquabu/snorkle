@@ -4,3 +4,6 @@
 [submodule "lib/submodules/irbivore"]
 	path = lib/submodules/irbivore
 	url = git@github.com:aquabu/irbivore.git
+[submodule "lib/submodules/scruby"]
+	path = lib/submodules/scruby
+	url = git://github.com/maca/scruby.git
