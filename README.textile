@@ -29,12 +29,12 @@ Use lib/simple_render.ck to render non-realtime audio or realtime audio with com
 
 h2. Chuckr
 
-A ruby wrapper for chuck. To install you will need to go to lib/submodules/chuckr and run:
+A ruby wrapper for chuck shreds. To install you will need to go to lib/submodules/chuckr and run:
 rake chuck:setup env=osx          # compile/install chuck binary (osx|osx-ppc|linux-oss|linux-jack|linux-alsa)
 
 h2. Scruby
 
-"Scruby":http://github.com/maca/scruby is a supercollider client written in ruby by Macario Ortega. Install the gem and watch it compile:
+"Scruby":http://github.com/maca/scruby is a SuperCollider client written in ruby by Macario Ortega. Install the gem and watch it compile:
 sudo gem install maca-scruby
 
 h2. Lilypond
