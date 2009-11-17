@@ -89,11 +89,7 @@ class EuclideanSequencer
 
   # Choose the appropriate counter for the current size of the sequence
   def choose_counter(remainder, denominator)
-    if remainder > denominator
-      number_of_distributions = denominator
-    else
-      number_of_distributions = remainder
-    end
+    remainder > denominator ? denominator : remainder
   end
 
   # Determine how many sets of zeros can be nabbed from the pulses at a time,
