@@ -61,25 +61,18 @@ class EuclideanSequencer
 
   # The magickal euclidean algorithmical engine!
   def euclid(hits,pulses)
-    construct_sequence(hits, pulses)
+    return @sequence.to_s if hits == 0 #terminate recursion if done
+    construct_sequence(hits, pulses) if @sequence[0] == 0
     remainder, denominator = count_element_types
     zero_sets = determine_zero_sets(hits, pulses, remainder, denominator)
     number_of_distributions = choose_counter(remainder, denominator)
 
-
-    # Determine if the algorithm has concluded or another iteration is neccessy:
-    if hits == 0
-      return @sequence.to_s
-    else
-      distribute_remainder(zero_sets, number_of_distributions)
-    end
-
-    # Recursion:
-    return euclid(pulses % hits,hits)
+    distribute_remainder(zero_sets, number_of_distributions)
+    euclid(pulses % hits,hits)
   end
 
+  # Distribute the remainder into the denominator and pop the unnecessary elements:
   def distribute_remainder(zero_sets, number_of_distributions)
-    # Distribute the remainder into the denominator and pop the unnecessary elements:
     number_of_distributions.times do |distribution|
       zero_sets.times do
         @sequence[distribution] << @sequence.pop unless @sequence[distribution].nil?
@@ -119,33 +112,28 @@ class EuclideanSequencer
     end
     zero_sets
   end
-  
+
+  # Count the sequence element types (remainder or denominator) for distribution:
   def count_element_types
-    # Count the sequence element types (remainder or denominator) for distribution:
-    remainder = 0
-    denominator = 0
+    remainder = denominator = 0
     @sequence.each do |element|
-      if element == @sequence.last
-        remainder = remainder + 1
-      else
-        denominator = denominator + 1
-      end
+      element == @sequence.last ? remainder += 1 : denominator += 1
     end
     return remainder, denominator
   end
 
   # Contruct the sequence if new
   def construct_sequence(hits, pulses)
-    if @sequence[0] == 0
-      hits.times do |hit|
-        @sequence[hit] = "1"
-      end
-      pulses.times do |pulse|
-        @sequence[hits + pulse] = "0"
-      end
-      hits.times do |hit|
-        @sequence.pop
-      end
+    hits.times do |hit|
+      @sequence[hit] = "1"
+    end
+
+    pulses.times do |pulse|
+      @sequence[hits + pulse] = "0"
+    end
+    
+    hits.times do |hit|
+      @sequence.pop
     end
   end
 end
