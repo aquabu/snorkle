@@ -8,6 +8,7 @@ describe EuclideanSequencer do
   it "has a default sequnce" do
     @seq.sequence.should == [0]
   end
+  
   describe "#generate" do
     it "can generate a euclidean sequence as a string" do
       @seq.generate(5,8).should == "10110101"
