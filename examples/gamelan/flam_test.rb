@@ -1,4 +1,6 @@
-# Drum machine example from Jeremy Voorhis's Gamelan project
+# Flam test
+# play two snares at the same time to hear if there is flamming
+# based on drum machine example from Jeremy Voorhis's Gamelan project
 # http://github.com/jvoorhis/gamelan
 
 $:.unshift File.join( File.dirname( __FILE__ ), '../lib')
@@ -34,12 +36,8 @@ class DrumMachine
 
   def schedule_events
     (0..15).each do |beat_offset|
-      play(beat_offset, KICK1) # every downbeat
-      play(beat_offset+0.5, KICK2) # every upbeat
-      if beat_offset % 4 == 0
-        extra = (beat_offset % 8) / 4
-        play beat_offset+extra, SNARE
-      end
+      play(beat_offset, SNARE) # every downbeat
+      play(beat_offset, SNARE) # every upbeat
     end
 
     @scheduler.at(16) { @scheduler.stop } # schedule shutdown
