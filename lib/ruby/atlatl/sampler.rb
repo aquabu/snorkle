@@ -4,15 +4,12 @@ class Atlatl::Sampler
   attr_accessor :sample_player, :sample_folder
 
   KEYMAP = {
-          "a" => "909_kick.wav",
-          "s" => "snare.wav",
-          "d" => "core_fast_hats.wav",
-          "f" => "core_drums.wav",
-          "g" => "core_rhodes.wav",
-          "h" => "core_bass.wav",
-          "j" => "core_clave.wav",
-          "k" => "core_barimbau_2.wav",
-          "l" => "core_wicked_bass_short.wav",
+          "a" => "core_fast_hats.wav",
+          "s" => "core_drums.wav",
+          "d" => "core_bass.wav",
+          "f" => "core_clave.wav",
+          "g" => "core_barimbau_2.wav",
+          "h" => "core_rhodes.wav",
           }
 
   # call vm.start and vm.stop before using sampler
@@ -34,7 +31,7 @@ class Atlatl::Sampler
   end
 
   def shred_keys
-    puts "Play SAMPLES. To end type <esc>."
+    puts "Play SAMPLES a - h. To end type <esc>."
     start
 
     loop do
@@ -42,7 +39,11 @@ class Atlatl::Sampler
       print char
 
       play_shred_sample(KEYMAP[char]) unless skip?(char) # the threading helps the print display
-      (stop; return) if escape(char)
+       if escape(char)
+         stop
+         system "killall -HUP chuckr_bin" # brutally stop all chuckr processes
+         return
+      end
     end
 
   end
@@ -68,6 +69,7 @@ class Atlatl::Sampler
   def create_sample_shred(sample)
     shred = Chuckr::Shreds::SamplePlayer.new
     shred.set :sample => @sample_folder + "/" + sample
+    shred.set :loop => true
     shred
   end
 

@@ -2,12 +2,12 @@ module Chuckr
 module Shreds
   class SamplePlayer < Shred
     def setup
-      set :sample => "snare.wav"
+      set :sample => "snare.wav", :loop => false
 
       setup_ck do
         <<-CHUCK
           // this synchronizes to period
-          .5::second => dur T;
+          1::second => dur T;
           T - (now % T) => now;
 
           // sound file
@@ -18,9 +18,16 @@ module Shreds
 
           // load the file
           filename => buf.read;
-          0 => buf.pos;
-          repeat( buf.samples() ) {
-              1::samp => now;
+          
+          while(true) {
+            0 => buf.pos;
+            repeat( buf.samples() ) {
+                1::samp => now;
+            }
+
+              if (!#{self[:loop]}) {
+                  break;
+              }
           }
         CHUCK
       end
