@@ -1,8 +1,12 @@
 require File.expand_path(File.dirname(__FILE__)) + '/../../config/init.rb'
 
+# Ruby Euclidean Rhythm Implementation Courtesy of Matt Ridenour
+# Bloopsaphone courtesy of _why the lucky stiff and crew
+# Bizarre bloopsaphone pi musical interpretation with euclidean rhythms courtesy of Noah Thorp
+
 # setup the bloops o' phone instruments
 b = Bloops.new
-b.tempo = 310
+b.tempo = 320
 
 square = b.sound Bloops::SQUARE
 square.volume = 0.5
@@ -12,9 +16,9 @@ square.decay = 0.3
 
 beat = b.sound Bloops::NOISE
 beat.volume = 0.3
-beat.punch = 0.5
+beat.punch = 0.2
 beat.sustain = 0.2
-beat.decay = 0.4
+beat.decay = 0.1
 beat.slide = -0.4
 beat.phase = 0.2
 beat.psweep = 0.2
@@ -42,10 +46,10 @@ chord.vspeed = 0.255
 # setup quantization for 10 pi digit values to 10 possible notes
 NOTES = %w{c c# d d# e f# g g# a b}
 
-# make melodie based on pi with a euclidean rhythm
-# pi_length is the number of digits of pi that will be used mapped to the above notes
+# make melodie based on pi, only play notes the match the euclidean rhythm
+# pi_length is the number of digits of pi that will be mapped to the NOTES
 # rhythms will be wrapped to the total pi_length
-# melody can be offset by an interval
+# melody can be offset by an interval (ie a harmony)
 def greek_melody(pi_length, hits, beats, melody_offset = 0)
   melody = ""
   rhythm = EuclideanSequencer.generate_array(hits,beats) # generate a euclidean rythm
@@ -62,22 +66,27 @@ def pause(beats)
 end
 
 # generate the greek melodies
-section_length = 48 # try 12, 32, 48, 64 - somewhere on your way to 128 you may hit gc issues
+section_length = 48
+
+# a greek melody in A B A form, this form adapt to the section_length size
+b.tune square, greek_melody(section_length, 9, 12) + greek_melody(section_length, 7, 28) + greek_melody(section_length, 9, 12)
+b.tune sine, greek_melody(section_length, 17, 24, 6) + greek_melody(section_length, 11, 16, 6) + greek_melody(section_length, 17, 24, 6)
+b.tune beat, (pause(section_length / 2) + greek_melody(section_length / 2, 7, 12)) * 3
+b.tune chord, greek_melody(section_length, 7, 32, 4) * 3
+
+# Some greek melodies to play with from simpler times
+
+# try 12, 32, 48, 64 - somewhere on your way to 128 you may hit gc issues
 #b.tune square, greek_melody(section_length, 9, 12)
 #b.tune sine, greek_melody(section_length, 17, 24, 6)
 #b.tune beat, pause(section_length / 2) + greek_melody(section_length / 2, 7, 12)
 #b.tune chord, greek_melody(section_length, 7, 32, 4)
+
 # v2
 #b.tune square, greek_melody(section_length, 7, 28)
 #b.tune sine, greek_melody(section_length, 11, 16, 6)
 #b.tune beat, pause(section_length / 2) + greek_melody(section_length / 2, 5, 12)
 #b.tune chord, greek_melody(section_length, 7, 32, 4)
-
-b.tune square, greek_melody(section_length, 9, 12) + greek_melody(section_length, 7, 28) + greek_melody(section_length, 9, 12)
-b.tune sine, greek_melody(section_length, 17, 24, 6) + greek_melody(section_length, 11, 16, 6) + greek_melody(section_length, 17, 24, 6)
-b.tune beat, pause(section_length / 2) + greek_melody(section_length / 2, 7, 12) + pause(section_length / 2) + greek_melody(section_length / 2, 7, 12) + pause(section_length / 2) + greek_melody(section_length / 2, 7, 12)
-b.tune chord, greek_melody(section_length, 7, 32, 4) + greek_melody(section_length, 7, 32, 4) + greek_melody(section_length, 7, 32, 4)
-
 
 b.play
 sleep 1 while !b.stopped?
