@@ -23,5 +23,14 @@ class BigPi
         pi = 4*(4*arccot(5, unity) - arccot(239, unity))
         pi / (10**fudge)
     end
+
+    def calc_pi_array(digits)
+      result = calc_pi(digits).to_s.split("")
+      result.map {|v| v.to_i}
+    end
+
+    def pi_array_with_offset(digits, offset)
+      calc_pi_array(digits).map {|v| v + offset}
+    end
   end
 end

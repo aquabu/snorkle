@@ -26,6 +26,11 @@ class EuclideanSequencer
   def initialize
     @sequence = [0]
   end
+  
+  def self.generate_array(hits,pulses)
+    seq = EuclideanSequencer.new
+    seq.generate_array(hits,pulses)
+  end
 
   def generate(hits,pulses)
     # Outputs a binary sequence using ones and zeros.

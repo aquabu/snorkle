@@ -9,6 +9,12 @@ describe EuclideanSequencer do
     @seq.sequence.should == [0]
   end
 
+  describe ".generate_array" do
+    it "generates an array" do
+      EuclideanSequencer.generate_array(5,8).should == [1, 0, 1, 1, 0, 1, 0, 1]
+    end
+  end
+
   describe "#generate" do
     it "can generate a euclidean sequence as a string" do
       @seq.generate(5,8).should == "10110101"
