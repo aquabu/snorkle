@@ -45,4 +45,16 @@ describe EuclideanSequencer do
       @seq.generate_with_offset(5,8, 1).should == [0, 1, 1, 0, 1, 0, 1, 1]
     end
   end
+
+  describe "#construct_sequence" do
+    it "with 5 hits and 8 pulses it returns" do
+      @seq.construct_sequence(5,8)
+      @seq.sequence.should == ["1", "1", "1", "1", "1", "0", "0", "0"]
+    end
+
+    it "with 7 hits and 12 pulses it returns" do
+      @seq.construct_sequence(7,12)
+      @seq.sequence.should == ["1", "1", "1", "1", "1", "1", "1", "0", "0", "0", "0", "0"]
+    end
+  end
 end

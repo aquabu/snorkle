@@ -124,6 +124,7 @@ class EuclideanSequencer
 
   # Contruct the sequence if new
   def construct_sequence(hits, pulses)
+    # @sequence = (["1"] * hits) + (["0"] * (pulses - hits) )
     hits.times do |hit|
       @sequence[hit] = "1"
     end
@@ -131,7 +132,7 @@ class EuclideanSequencer
     pulses.times do |pulse|
       @sequence[hits + pulse] = "0"
     end
-    
+
     hits.times do |hit|
       @sequence.pop
     end

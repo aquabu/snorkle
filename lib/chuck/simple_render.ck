@@ -7,6 +7,7 @@
 // pull samples from the dac
 dac => Gain g => WvOut w => blackhole;
 
+// Setup unit generator graph
 SinOsc s => JCRev r => dac;
 .5 => r.gain;
 .075 => r.mix;
