@@ -93,15 +93,21 @@ describe Atlatl::Sampler do
   describe "#shred_keys" do
     before do
       @sampler.stub!(:system)
-      @sampler.stub!(:escape).and_return(true)
       @sampler.stub!(:puts).and_return(true)
       @sampler.stub!(:print).and_return(true)
+      
+      @sampler.should_receive(:escape).and_return(true)
+      @sampler.should_receive(:start).and_return(true)
+      @sampler.should_receive(:stop).and_return(true)
+      #@sampler.should_receive(:stop).and_return(true)
+      # always should start and stop
+
     end
 
     context "with a keymapped character" do
       it "calls play" do
         @sampler.should_receive(:get_character).and_return(97) # 97 is a lowercase a
-        @sampler.should_receive(:play_command_line_sample).with("snare.wav") # 97 is a lowercase a
+        @sampler.should_receive(:play_shred_sample).with("snare.wav") # 97 is a lowercase a
         @sampler.shred_keys
       end
     end
@@ -111,10 +117,12 @@ describe Atlatl::Sampler do
         @sampler.should_receive(:get_character).and_return(126) # 126 is th ~ (tilda) character
       end
 
-      it "does not call play" do
-        @sampler.should_not_receive(:play_command_line_sample)
+      it "does not create a shred" do
+        @sampler.should_not_receive(:play_shred_sample)
         @sampler.shred_keys
       end
     end
   end
+
+
 end

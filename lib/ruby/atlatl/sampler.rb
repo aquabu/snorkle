@@ -32,13 +32,16 @@ class Atlatl::Sampler
 
   def shred_keys
     puts "Play SAMPLES. To end type <esc>."
+    start
+
     loop do
       char = get_character.chr
       print char
 
-      play_command_line_sample(KEYMAP[char]) unless skip?(char) # the threading helps the print display
-      return if escape(char)
+      play_shred_sample(KEYMAP[char]) unless skip?(char) # the threading helps the print display
+      stop; return if escape(char)
     end
+
   end
 
   def escape(key)
