@@ -2,7 +2,7 @@ module Chuckr
 module Shreds
   class SamplePlayer < Shred
     def setup
-      set :loop => true, :time => 100, :sample => "snare.wav"
+      set :sample => "snare.wav"
 
       setup_ck do
         <<-CHUCK

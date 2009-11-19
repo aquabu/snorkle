@@ -17,13 +17,17 @@ class Atlatl::Sampler
     @vm ||= Chuckr::VM.new
   end
 
-  def vm
-    Chuckr::VM.vm
-  end
-
   def initialize
     @sample_player_path = "#{PROJECT_ROOT}/lib/chuck/sample_player.ck"
     @sample_folder = "#{PROJECT_ROOT}/lib/samples"
+  end
+
+  def start
+    Atlatl::Sampler.vm.start
+  end
+
+  def stop
+    Atlatl::Sampler.vm.stop
   end
 
   def shred_keys
@@ -56,8 +60,13 @@ class Atlatl::Sampler
   end
 
   def create_sample_shred(sample)
-    shred = Chukr::Shred::SamplePlayer.new
+    shred = Chuckr::Shreds::SamplePlayer.new
     shred.set :sample => @sample_folder + "/" + sample
     shred
+  end
+
+  def play_shred_sample(sample)
+    shred = create_sample_shred(sample)
+    shred.attach Atlatl::Sampler.vm
   end
 end

@@ -15,16 +15,45 @@ describe Atlatl::Sampler do
     end
   end
 
+  describe "#start" do
+    it "starts the vm" do
+      Atlatl::Sampler.vm.should_receive(:start)
+      @sampler.start
+    end
+
+  end
+
+  describe "#stop" do
+    it "stops the vm" do
+      Atlatl::Sampler.vm.should_receive(:stop)
+      @sampler.stop
+    end
+  end
+
   describe "create_sample_shred" do
     before do
       @shred = @sampler.create_sample_shred("snare.wav")
     end
     
     it "is a Chuckr shred" do
-      @shred.class.should == Array
+      @shred.class.should == Chuckr::Shreds::SamplePlayer
     end
     
-    it "has a file name from the sample library"
+    it "has a sample file name in the sample library" do
+      @shred[:sample].should == @sampler.sample_folder + "/snare.wav"
+    end
+  end
+
+  describe "play_shred_sample" do
+    before do
+      @mock_shred = mock(:null_object => true)
+      Chuckr::Shreds::SamplePlayer.should_receive(:new).and_return(@mock_shred)
+    end
+
+    it "attaches the shred to the vm" do
+      @mock_shred.should_receive(:attach)
+      @sampler.play_shred_sample("snare.wav")
+    end
   end
 
   describe "#play_command_line_sample_string" do
