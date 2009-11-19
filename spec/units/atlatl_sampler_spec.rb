@@ -41,7 +41,7 @@ describe Atlatl::Sampler do
     end
   end
 
-  describe "#shredder_keys" do
+  describe "#shred_keys" do
     before do
       @sampler = Atlatl::Sampler.new
       @sampler.stub!(:system)
@@ -54,7 +54,7 @@ describe Atlatl::Sampler do
       it "calls play" do
         @sampler.should_receive(:get_character).and_return(97) # 97 is a lowercase a
         @sampler.should_receive(:play_sample).with("snare.wav") # 97 is a lowercase a
-        @sampler.shredder_keys
+        @sampler.shred_keys
       end
     end
 
@@ -65,7 +65,7 @@ describe Atlatl::Sampler do
 
       it "does not call play" do
         @sampler.should_not_receive(:play_sample)
-        @sampler.shredder_keys
+        @sampler.shred_keys
       end
     end
   end

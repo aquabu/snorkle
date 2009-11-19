@@ -3,10 +3,15 @@ class Atlatl::Sampler
   include HighLine::SystemExtensions
 
   KEYMAP = {
-    "a" => "snare.wav"
+    "a" => "snare.wav",
+    "s" => "909_kick.wav",
+    "d" => "core_bass.wav",
+    "f" => "core_drums.wav",
+    "g" => "core_fast_hats.wav",
+    "h" => "core_wicked_bass_short.wav"
   }
   
-  def shredder_keys
+  def shred_keys
     puts "Play SAMPLES. To end type <esc>."
     loop do
       char = get_character.chr
