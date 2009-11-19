@@ -1,6 +1,6 @@
 h1. Snorkle
 
-Snorkle is a compilation of Ruby Audio libraries with examples. It was created by Noah Thorp to go along with his talk "Making Music With Ruby: Patterns, Context, Fun" at RubyConf 2009 and to make it easier for rubyists to explore methods of working on music and audio projects.
+Snorkle is a compilation of Ruby Audio libraries with examples. It is currently OSX X specific, but most or all of the libraries are available on Linux. It was created by Noah Thorp to go along with his talk "Making Music With Ruby: Patterns, Context, Fun" at RubyConf 2009 and to make it easier for rubyists to explore methods of working on music and audio projects.
 
 You can follow Noah's adventures on his "blog":http://www.aquabu.com and on "Twitter":http://www.twitter.com/aquabu. Also, if you are in the Bay Area you should checkout the "Bay Area Computer Music Technology Group":http://www.barcmut.org
 
@@ -17,7 +17,6 @@ $ git submodule init
 
 
 h2. Chuck
-
 
 h3. Non-Real Time Audio Rendering Using Chuck Example
 
@@ -58,7 +57,7 @@ h1. Snorkle Primer
 
 These pdfs and web references are well worth reading in support of your ruby audio endeavors or interfacing with non-ruby libraries:
 * "Chuck Manual":http://chuck.cs.princeton.edu/release/files/chuck_manual.pdf
-* Super Collider PDF (Compiled by Noah from the supercollider help files)
+* "Super Collider PDF (Compiled by Noah from the supercollider help files by Scott Wilson)":http://aquabu.com/assets/2009/11/19/getting_started_with_sc.pdf This tutorial is also available from SuperCollider help, but this is a PDF version.
 * "Toplap live coding wiki":http://www.toplap.org/index.php/Main_Page
 * "Open Sound Control specification":http://opensoundcontrol.org/spec-1_0
 

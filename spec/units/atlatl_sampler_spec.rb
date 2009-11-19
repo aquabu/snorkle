@@ -107,7 +107,7 @@ describe Atlatl::Sampler do
     context "with a keymapped character" do
       it "calls play" do
         @sampler.should_receive(:get_character).and_return(97) # 97 is a lowercase a
-        @sampler.should_receive(:play_shred_sample).with("snare.wav") # 97 is a lowercase a
+        @sampler.should_receive(:play_shred_sample).with("909_kick.wav") # 97 is a lowercase a
         @sampler.shred_keys
       end
     end
@@ -123,6 +123,4 @@ describe Atlatl::Sampler do
       end
     end
   end
-
-
 end

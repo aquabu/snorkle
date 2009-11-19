@@ -4,13 +4,16 @@ class Atlatl::Sampler
   attr_accessor :sample_player, :sample_folder
 
   KEYMAP = {
-    "a" => "snare.wav",
-    "s" => "909_kick.wav",
-    "d" => "core_bass.wav",
-    "f" => "core_drums.wav",
-    "g" => "core_fast_hats.wav",
-    "h" => "core_wicked_bass_short.wav"
-  }
+          "a" => "909_kick.wav",
+          "s" => "snare.wav",
+          "d" => "core_fast_hats.wav",
+          "f" => "core_drums.wav",
+          "g" => "core_rhodes.wav",
+          "h" => "core_bass.wav",
+          "j" => "core_clave.wav",
+          "k" => "core_barimbau_2.wav",
+          "l" => "core_wicked_bass_short.wav",
+          }
 
   # call vm.start and vm.stop before using sampler
   def self.vm
