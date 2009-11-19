@@ -16,7 +16,6 @@ class Atlatl
     sequence.insert(i, Note.new(*args))
   end
 
-
   def sequence_to_string
     sequence.map do |event|
       ":'#{event.pitch} #{event.duration}'"
