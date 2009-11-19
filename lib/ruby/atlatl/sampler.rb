@@ -39,7 +39,7 @@ class Atlatl::Sampler
       print char
 
       play_shred_sample(KEYMAP[char]) unless skip?(char) # the threading helps the print display
-      stop; return if escape(char)
+      (stop; return) if escape(char)
     end
 
   end
