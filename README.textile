@@ -14,7 +14,12 @@ Install snorkle by doing the following:
 $ git clone git@github.com:aquabu/snorkle.git
 $ cd snorkle
 $ git submodule init
+$ git submodule update
 
+h2. To Be Fixed
+
+- There are a lot of libraries here and there should be an installation script for all of them.
+- lib/samples has some very large wav files. smaller files for demonstrating the irbivore with chuckr sampler would be better.
 
 h2. Chuck
 
