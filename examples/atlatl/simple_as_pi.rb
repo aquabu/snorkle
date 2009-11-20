@@ -19,4 +19,6 @@ end
 
 # save the file to the same folder as we are isnrkn
 @atlatl.filename = File.expand_path(File.dirname(__FILE__)) + "/pi.wav"
+
+pp @atlatl.chuck_string
 @atlatl.render

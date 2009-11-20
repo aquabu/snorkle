@@ -1,24 +1,22 @@
 // render a from a sequence of notes
-// first argument is the filename
-// next arguments are strings in the format note name then duration in seconds
 // chuck simple_render.ck:'this.wav':'60 0.5'
+// first argument is the filename
+// next arguments are strings of note and duration in seconds
 
-
-// pull samples from the dac
-dac => Gain g => WvOut w => blackhole;
 
 // Setup unit generator graph
 SinOsc s => JCRev r => dac;
 .5 => r.gain;
-.075 => r.mix;
+.075 => r.mix; //reverb wetness
+
+// pull samples from the dac for recording
+dac => WvOut w => blackhole;
 
 // get the filename from the first argument
-0 => int i;
-me.arg(i) => w.wavFilename;
-i++;
+me.arg(0) => w.wavFilename;
 
 // loop through the command line arguments after the file name
-for( i; i < me.args(); i++ )
+for(1 => int i; i < me.args(); i++ )
 {
     // defaults
     60 => float note;
