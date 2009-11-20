@@ -1,4 +1,4 @@
-//sine signal path
+//Sine signal path
 SinOsc s => dac;                    
 //ASCII arg to int
 Std.atoi( me.arg(0) ) => int freq; 
