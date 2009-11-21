@@ -1,5 +1,5 @@
 // this synchronizes to period
-.5::second => dur T;
+.25::second => dur T;
 T - (now % T) => now;
 
 // sound file
