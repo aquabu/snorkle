@@ -8,17 +8,20 @@ h1. Libraries and Examples
 
 Examples are in the /examples folder.
 
-Snorkle makes use of lots of libraries from various sources. Some of the libraries are referenced as gems (e.g. Bloopsaphone), some require explicit installation (e.g. Lilypad, Chuck) , and some are installed as git submodules (e.g. Opaz-plugdk, Chuckr). For now just follow the install instructions - it's on the priorities list to simplify the install.
+Snorkle makes use of lots of libraries from various sources. Some of the libraries are referenced as gems (e.g. Bloopsaphone), some require explicit installation (e.g. Lilypad, Chuck) , and some are installed as git submodules (e.g. Opaz-plugdk, Chuckr). For now just follow the install instructions - it's high on the priorities list to simplify the install - patches for installation would be excitedly accepted :-) 
 
 Install snorkle by doing the following:
 $ git clone git@github.com:aquabu/snorkle.git
-$ cd snorkle
-$ git submodule init
-$ git submodule update
+
+# compile/install chuck binary for chuckr 
+$ cd snorkle/lib/submodules/chuckr
+$ rake chuck:setup env=osx          
+
+Note: Braid is now used to manage submodules instead of requiring you to init them with git. 
 
 h2. To Be Fixed
 
-- There are a lot of libraries here and there should be an installation script for all of them.
+- There are a lot of libraries here. There should be an installation script for all of them.
 - lib/samples has some very large wav files. smaller files for demonstrating the irbivore with chuckr sampler would be better.
 
 h2. Chuck
@@ -66,7 +69,8 @@ These pdfs and web references are well worth reading in support of your ruby aud
 * "Toplap live coding wiki":http://www.toplap.org/index.php/Main_Page
 * "Open Sound Control specification":http://opensoundcontrol.org/spec-1_0
 
-h1. Some Projects Worth Checking Out That Are Not Included In Snorkle
+h1. Some Related Projects Worth Checking Out That Are Not Included In Snorkle
 * "opaz-plugdk":http://github.com/thbar/opaz-plugdk library for bulding jVSTwRapper plugins with Ruby - Thibaut Barrère
+* "ruck":http://github.com/alltom/ruck is a ruby re-implementation of chuck by Tom Lieber. Primarily non-real time.
 * "core_audio":http://github.com/jvoorhis/core_audio - Jeremy Voorhis
 * "keykit":http://nosuch.com/keykit/ - Tim Thompson
