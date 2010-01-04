@@ -1,0 +1,8 @@
+--- 
+lib/submodules/chuckr: 
+  squashed: true
+  url: git://github.com/lian/chuckr.git
+  branch: master
+  type: git
+  revision: d332550dd410f2a6dff85cc55ce91dacdcaa3250
+  remote: braid/lib/submodules/chuckr

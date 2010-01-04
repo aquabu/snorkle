@@ -1,0 +1,35 @@
+### What?
+ChucKr - strongly-timed audio/scheduling with ruby and chuck
+
+
+# INSTALL - dependencies: ruby, gcc
+$ rake chuck:setup env=osx          # compile/install chuck binary (osx|osx-ppc|linux-oss|linux-jack|linux-alsa)
+$ rake spec:all                     # verify using specs, only watch for failures (irgnore pending)
+
+
+# Use::WEB - web-ui comming soon.
+
+
+# Use::IRB
+shell> irb -r lib/chuckr.rb            # start irb and require chuckr.rb
+irb> vm = Chuckr::VM.new            # create and configure VM
+irb> vm.start                       # start VM-runtime
+irb> vm.status                      # return status
+
+irb> foo = Chuckr::Shreds::Foo.new  # create default 'foo'-shred
+irb> foo.attach vm                  # attach 'foo' to VM, and start processing shred
+irb> vm.shreds                      # show shreds, should include 'foo' now
+
+irb> foo.set :time => 160           # sets foo time variable to 160
+irb> foo.replace!                   # recompile / replace shred
+
+irb> foo.detach                     # detach VM
+irb> vm.add_shred foo               # different method to attach
+
+irb> foo.set! :time => 200          # shortcut for set + replace!
+
+irb> vm.stop                        # stops vm. force kill if needed
+irb> vm.status[:running]            # true|false
+
+
+# Use::Library - read specs. thats it
