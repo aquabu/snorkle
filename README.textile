@@ -12,9 +12,7 @@ Snorkle makes use of lots of libraries from various sources. Some of the librari
 
 Install snorkle by doing the following:
 $ git clone git@github.com:aquabu/snorkle.git
-
-# compile/install chuck binary for chuckr 
-$ cd snorkle/lib/submodules/chuckr
+$ cd snorkle/lib/submodules/chuckr # compile/install chuck binary for chuckr 
 $ rake chuck:setup env=osx          
 
 Note: Braid is now used to manage submodules instead of requiring you to init them with git. 
