@@ -1,0 +1,32 @@
+h1. Irbivore
+
+A musical live coding "front end" using IRB.
+
+To use. 
+- cd to the root level irbivore directory
+- type ruby irbivore.rb 
+- to play middle c (MIDI note 60) type: play 60
+- to enter into note playing mode type: midiator_keys 
+
+h2. Contributors 
+* Noah Thorp - http://www.aquabu.com (Original Creator)
+* Gabriel Horner - http://tagaholic.me
+
+Gratefully borrowed MIT licensed code from:
+* Ben Bleything -- ben@bleything.net (MIDIator)
+* Jermey Voorhis (Gamelan Scheduler)
+* Topher Cyll -- http://www.cyll.org
+
+h2. Included Libraries
+
+== Gem Dependencies
+
+Midiator
+PriorityQueue
+Highline
+Mislav-Hannah
+
+== License
+
+Distributed under the terms of the MIT license.  See the LICENSE file for
+complete text and details.

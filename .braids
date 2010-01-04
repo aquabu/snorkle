@@ -6,3 +6,10 @@ lib/submodules/chuckr:
   type: git
   revision: d332550dd410f2a6dff85cc55ce91dacdcaa3250
   remote: braid/lib/submodules/chuckr
+lib/submodules/irbivore: 
+  squashed: true
+  url: git@github.com:aquabu/irbivore.git
+  branch: master
+  type: git
+  revision: 4826aad477039fab6db68474f3d1e9f4f4401f66
+  remote: braid/lib/submodules/irbivore

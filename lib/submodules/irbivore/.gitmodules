@@ -1,0 +1,3 @@
+[submodule "lib/submodules/chuckr"]
+	path = lib/submodules/chuckr
+	url = git://github.com/aquabu/chuckr.git
